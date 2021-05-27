@@ -86,8 +86,6 @@ function district(stateid){
 
                 dateselected = reverseString(dateselected);
 
-                console.log(distid);
-
                 findbydist(distid,dateselected);
 
             })
@@ -196,7 +194,6 @@ function findbydist(distid,dateselected){
 document.querySelector('#search-nearby').addEventListener('click',()=>{
 navigator.geolocation.getCurrentPosition(position => {
     const { latitude, longitude } = position.coords;
-    console.log(latitude,longitude);
     searchnearby(latitude,longitude);
   });
 })
@@ -212,13 +209,10 @@ fetch(url)
   })
   .then((data) => {
 
-    console.log(data.centers);
-
     var count = 0;
 
     (data.centers).forEach((ele)=>{
 
-      console.log(ele);
       if(count<12){
         document.querySelector('#displaycontent').innerHTML+=`<div class="card bg-dark text-light" style="width: 19rem; padding:2px;">
                                                           <h5 class="card-header text-info">${ele.name}</h5>

@@ -129,6 +129,8 @@ function findbydist(distid,dateselected){
 
         (data.sessions).forEach((element) => {
 
+          if(element.available_capacity_dose1 != 0 || element.available_capacity_dose2 != 0){
+
           document.querySelector('#displaycontent').innerHTML+=`<div class="card bg-dark" style="width: 19rem; padding:2px;">
                                                                   <div class="card-body" style="background-color:#eee;">
                                                                     <Strong class="card-title">${element.name}</Strong>
@@ -177,6 +179,7 @@ function findbydist(distid,dateselected){
                                                                     </span>
                                                                   </div>
                                                                 </div>`;
+          }
 
         });
 
